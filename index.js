@@ -1,12 +1,11 @@
 const express = require('express')
 const cors = require('cors')
-const pool = require('./db/pgadmin/db')
-const { query } = require('express')
-const mongo = require('./db/mongo/index')
+// const pool = require('./db/pgadmin/db')
+const mongo = require('./db/mongo/mongo')
 
 const app = express()
-let sid = 2
-let aid = 2
+// let sid = 3
+// let aid = 3
 // middleware
 
 app.use(cors())
@@ -19,14 +18,14 @@ app.use(express.json())
 app.post('/addSongs',async(req,res)=>{
 
     try {
-        sid+=1
+       
         console.log(req.body)
         
-        sid = Number(sid)
-        const {name,dor,cover,rating}=req.body
-        dob=new Date(dor)
-        const newSong = await pool.query("INSERT INTO SONGS VALUES($1,$2,$3,$4)",[sid,name,dor,cover])
-        return res.json(newSong)
+        // sid = Number(sid)
+        // const {name,dor,cover,rating}=req.body
+        // dob=new Date(dor)
+        // const newSong = await pool.query("INSERT INTO SONGS VALUES($1,$2,$3,$4)",[sid,name,dor,cover])
+        return res.json("added")
         
     } catch (error) {
         console.log(error)
@@ -45,10 +44,10 @@ app.post('/addArtists',async(req,res)=>{
         aid+=1
         console.log(req.body)
         
-        aid = Number(aid)
-        const {name,dob,bio}=req.body
+        // aid = Number(aid)
+        // const {name,dob,bio}=req.body
        
-        const newSong = await pool.query("INSERT INTO ARTISTS VALUES($1,$2,$3,$4)",[aid,name,dob,bio])
+        // const newSong = await pool.query("INSERT INTO ARTISTS VALUES($1,$2,$3,$4)",[aid,name,dob,bio])
         return res.json(newSong)
         
     } catch (error) {
@@ -87,39 +86,39 @@ app.post('/addArtists',async(req,res)=>{
 // })
 
 
-app.get('/getSongs',async(req,res)=>{
+// app.get('/getSongs',async(req,res)=>{
 
-    try {
-        const song = await pool.query("SELECT * FROM SONGS")
-        return res.json(song.rows)
+//     try {
+//         const song = await pool.query("SELECT * FROM SONGS")
+//         return res.json(song.rows)
         
-    } catch (error) {
-        console.log(error)
-        return res.json(error)
-        
-
-
-        
-    }
-
-})
-
-app.get('/getArtists',async(req,res)=>{
-
-    try {
-        const song = await pool.query("SELECT * FROM ARTISTS")
-        return res.json(song.rows)
-        
-    } catch (error) {
-        console.log(error)
-        return res.json(error)
+//     } catch (error) {
+//         console.log(error)
+//         return res.json(error)
         
 
 
         
-    }
+//     }
 
-})
+// })
+
+// app.get('/getArtists',async(req,res)=>{
+
+//     try {
+//         const song = await pool.query("SELECT * FROM ARTISTS")
+//         return res.json(song.rows)
+        
+//     } catch (error) {
+//         console.log(error)
+//         return res.json(error)
+        
+
+
+        
+//     }
+
+// })
 
 app.listen(3000,()=>{
     console.log("Server at 3000")
