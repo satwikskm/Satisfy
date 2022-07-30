@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState} from 'react'
-
+import './home.css'
 
 
 const Home = () => {
@@ -29,7 +29,47 @@ const Home = () => {
   return (
     <div>
         <h1>Home</h1>
-        <h2>Top 10 Songs</h2>
+        <div className="top">
+        <h2 className="title">Top 10 Songs</h2>
+        <button className="addSong"> + Add Song</button>
+
+        </div>
+       
+        <div className="card">
+        <table>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+        </tr>
+        
+        
+        <tr>
+          <td>Subham</td>
+          <td>25</td>
+          <td>Male</td>
+        </tr>
+      </table>
+        </div>
+        <h2 className="title">Top 10 Artist</h2>
+        <div className="card">
+        <table>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Rating</th>
+        </tr>
+        
+        
+        <tr>
+          <td>Subham</td>
+          <td>25</td>
+          <td>Male</td>
+          <td>5</td>
+        </tr>
+      </table>
+        </div>
         
 
 

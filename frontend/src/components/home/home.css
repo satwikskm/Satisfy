@@ -1,0 +1,33 @@
+table {
+    border: 2px solid grey;
+    width: 100%;
+    height: 200px;
+  }
+    
+  th {
+    border-bottom: 1px solid black;
+    background: grey;
+  }
+    
+  td {
+    text-align: center;
+   border-right: 1px solid;
+  }
+
+  .top{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.addSong{
+    width: 10%;
+    margin: 10px 30px;
+    background: grey;
+    color: aliceblue;
+    border: none;
+    border-radius: 10px;
+}
+
+  
+  
