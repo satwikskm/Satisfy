@@ -1,0 +1,50 @@
+form{
+    display: flex;
+    margin-left: 50px;
+    flex-direction: column;
+    
+}
+
+.songName{
+    gap:60px;
+    display: flex;
+    padding: 20px 10px;
+}
+
+.dob{
+    gap:50px;
+    display: flex;
+    padding: 20px 10px;
+    
+
+}
+
+.bio{
+    gap:100px;
+    display: flex;
+    padding: 20px 10px;
+
+}
+
+.bio input{
+    margin-left: 20px;
+}
+
+.btn button{
+    padding: 10px 20px;
+    
+}
+
+.btn{
+    display: flex;
+    gap:10px;
+    margin-right: 450px;
+    align-items: center;
+    justify-content: center;
+}
+
+input{
+    padding: 10px 30px;
+    width: 30%;
+}
+

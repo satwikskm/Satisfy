@@ -1,0 +1,42 @@
+form{
+    display: flex;
+    margin-left: 50px;
+    flex-direction: column;
+    
+}
+
+.songName{
+    gap:60px;
+    display: flex;
+    padding: 20px 10px;
+}
+
+.dor{
+    gap:30px;
+    display: flex;
+    padding: 20px 10px;
+
+}
+
+.artist{
+    gap:100px;
+    display: flex;
+    padding: 20px 10px;
+
+}
+
+.btn button{
+    padding: 10px 20px;
+}
+
+.btn{
+    display: flex;
+    gap:10px;
+    margin-left: 150px;
+}
+
+input{
+    padding: 10px 30px;
+    width: 30%;
+}
+

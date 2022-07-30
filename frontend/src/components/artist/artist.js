@@ -1,13 +1,11 @@
 import React from 'react'
-import axios from "axios";
 import { useState } from "react";
-import './songs.css'
-
-const Songs = () => {
+import axios from "axios";
+import './artist.css'
+const Artist = () => {
     const [name, setName] = useState("");
     const [date, setDate] = useState("");
-    const [artist, setArtist] = useState("");
-    const[message,setMessage]=useState("")
+    const [bio, setBio] = useState("");
 
     const submitHandler = async (e) =>{
         e.preventDefault()
@@ -18,12 +16,12 @@ const Songs = () => {
           let data = JSON.stringify({
             "name": name,
             "DOR": date,
-            "Artist":artist
+            "Bio":bio
           });
           
           let config = {
             method: 'post',
-            url: 'http://localhost:3000/addSongs',
+            url: 'http://localhost:3000/addArtists',
             headers: { 
               'Content-Type': 'application/json'
             },
@@ -47,14 +45,11 @@ const Songs = () => {
         
 
     }
-    
   return (
-    <div>
-        <h1>Forms</h1>
-        <section>
+    <section>
         <form onSubmit={submitHandler}>
           <div className="songName">
-          <label htmlFor="songName">Song Name</label>
+          <label htmlFor="songName">Artist Name</label>
 
             <input 
               type="text"
@@ -64,8 +59,8 @@ const Songs = () => {
 
           </div>
 
-          <div className="dor">
-          <label htmlFor="songName">Date of Release </label>
+          <div className="dob">
+          <label htmlFor="songName">Date of Birth </label>
             <input 
             type="text"
             onChange={(e)=>setDate(e.target.value)}
@@ -74,15 +69,13 @@ const Songs = () => {
           </div>
         
             
-            <div className="artist">
-            <label htmlFor="songName">Artist</label>
+            <div className="bio">
+            <label htmlFor="songName">Bio</label>
                 <input 
                 type="text" 
-                onChange={(e)=>setArtist(e.target.value)}
+                onChange={(e)=>setBio(e.target.value)}
                 />
-                <button 
-                type='button'
-                onClick={()=>console.log('hi')}>+ Artist</button>
+                
             </div>
 
             <div className="btn">
@@ -103,9 +96,7 @@ const Songs = () => {
         
 
         </section>
-        
-    </div>
   )
 }
 
-export default Songs
+export default Artist
