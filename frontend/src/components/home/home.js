@@ -5,6 +5,8 @@ import { useState} from 'react'
 
 const Home = () => {
 
+    
+
     const [data,setData] = useState([])
     
     const api = async function(){
@@ -27,13 +29,22 @@ const Home = () => {
   return (
     <div>
         <h1>Home</h1>
-        {
+        <h2>Top 10 Songs</h2>
+        
+
+
+        {/* {
+            
             data.map((artist)=>{
                 return(
-                    <h1>{artist.name}</h1>
+                    <h1>{artist.name}:artist</h1>
+
                 )
             })
-        }
+        } */}
+
+        
+        
         
     </div>
   )
