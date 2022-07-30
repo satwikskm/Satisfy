@@ -1,7 +1,9 @@
 const express = require('express')
 const cors = require('cors')
-const pool = require('./db')
+const pool = require('./db/pgadmin/db')
 const { query } = require('express')
+const mongo = require('./db/mongo/index')
+
 const app = express()
 let sid = 2
 let aid = 2
@@ -121,4 +123,5 @@ app.get('/getArtists',async(req,res)=>{
 
 app.listen(3000,()=>{
     console.log("Server at 3000")
+    
 })
