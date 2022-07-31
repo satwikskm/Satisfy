@@ -30,7 +30,7 @@ const Home = () => {
     
   return (
     <div>
-        <h1>Home</h1>
+       
         <div className="top">
         <h2 className="title">Top 10 Songs</h2>
         <button className="addSong" onClick={()=>setModal(true)}> + Add Song</button>

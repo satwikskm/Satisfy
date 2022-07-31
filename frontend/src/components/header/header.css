@@ -1,0 +1,15 @@
+.main{
+    background: grey;
+    height: 20vh;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading{
+    background: white;
+    width: 10%;
+    margin: 0px 10px;
+    height: 10vh;
+    margin-top: 52px;
+}

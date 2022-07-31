@@ -53,7 +53,7 @@ const Songs = (props) => {
     
   return (
     <div>
-        <h1>Forms</h1>
+        <h1>Add Songs</h1>
         <section>
           <Modal isOpen={modal}>
           <button onClick={()=>setModal(false)}>X</button>

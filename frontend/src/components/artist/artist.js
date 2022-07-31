@@ -47,6 +47,7 @@ const Artist = (props) => {
     }
   return (
     <section>
+        <h1>Add Artists</h1>
         <form onSubmit={submitHandler}>
           <div className="songName">
           <label htmlFor="songName">Artist Name</label>
