@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import axios from "axios";
 import './artist.css'
-const Artist = () => {
+const Artist = (props) => {
     const [name, setName] = useState("");
     const [date, setDate] = useState("");
     const [bio, setBio] = useState("");
@@ -83,7 +83,7 @@ const Artist = () => {
             <button 
             type='button'
             className="cancel"
-            onClick={()=>console.log('cancel')}
+            onClick={()=>console.log(props.cancel(false))}
             >Cancel</button>
 
             </div>

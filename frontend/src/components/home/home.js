@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useState} from 'react'
+import Modal from 'react-modal';
 import './home.css'
+import Songs from '../songs/songs';
 
 
 const Home = () => {
@@ -8,7 +10,7 @@ const Home = () => {
     
 
     const [data,setData] = useState([])
-    
+    const [modal,setModal]=useState(false)
     const api = async function(){
         const url = `http://localhost:3000/getArtists`
         const apidata = await fetch(url)
@@ -31,7 +33,12 @@ const Home = () => {
         <h1>Home</h1>
         <div className="top">
         <h2 className="title">Top 10 Songs</h2>
-        <button className="addSong"> + Add Song</button>
+        <button className="addSong" onClick={()=>setModal(true)}> + Add Song</button>
+        <Modal isOpen={modal}>
+          <Songs cancel={setModal}/>
+        
+        </Modal>
+        
 
         </div>
        

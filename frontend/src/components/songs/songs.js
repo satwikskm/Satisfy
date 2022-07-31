@@ -1,12 +1,15 @@
 import React from 'react'
 import axios from "axios";
+import Modal from 'react-modal';
 import { useState } from "react";
+import Artist from '../artist/artist';
 import './songs.css'
 
-const Songs = () => {
+const Songs = (props) => {
     const [name, setName] = useState("");
     const [date, setDate] = useState("");
     const [artist, setArtist] = useState("");
+    const [modal,setModal]=useState(false)
     const[message,setMessage]=useState("")
 
     const submitHandler = async (e) =>{
@@ -52,6 +55,11 @@ const Songs = () => {
     <div>
         <h1>Forms</h1>
         <section>
+          <Modal isOpen={modal}>
+          <button onClick={()=>setModal(false)}>X</button>
+              <Artist cancel={setModal}/>
+              
+          </Modal>
         <form onSubmit={submitHandler}>
           <div className="songName">
           <label htmlFor="songName">Song Name</label>
@@ -82,7 +90,7 @@ const Songs = () => {
                 />
                 <button 
                 type='button'
-                onClick={()=>console.log('hi')}>+ Artist</button>
+                onClick={()=>setModal(true)}>+ Artist</button>
             </div>
 
             <div className="btn">
@@ -90,7 +98,7 @@ const Songs = () => {
             <button 
             type='button'
             className="cancel"
-            onClick={()=>console.log('cancel')}
+            onClick={()=>props.cancel(false)}
             >Cancel</button>
 
             </div>
