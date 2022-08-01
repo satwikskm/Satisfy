@@ -86,22 +86,22 @@ app.post('/addArtists',async(req,res)=>{
 // })
 
 
-// app.get('/getSongs',async(req,res)=>{
+app.get('/getSongs',async(req,res)=>{
 
-//     try {
-//         const song = await pool.query("SELECT * FROM SONGS")
-//         return res.json(song.rows)
+    try {
         
-//     } catch (error) {
-//         console.log(error)
-//         return res.json(error)
+        return res.json("got it")
+        
+    } catch (error) {
+        console.log(error)
+        return res.json(error)
         
 
 
         
-//     }
+    }
 
-// })
+})
 
 // app.get('/getArtists',async(req,res)=>{
 
